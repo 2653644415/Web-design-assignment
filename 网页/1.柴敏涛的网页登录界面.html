@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柴敏涛の小世界</title>
+    <style>
+        body{
+            /*引用图片作为登陆界面壁纸*/
+            background-image: url("../img/334.jpg") ;
+/*下面这行是缩小登陆界面的时候不用让它在下面再重复一张*/
+            background-repeat: no-repeat;
+            /*使图片在页面中全部显示*/
+            background-size: 100%;
+            /*把登录的文本放在中间*/
+            text-align: center;
+        }
+        .a {
+            position: absolute;
+            left: 40%;
+            bottom: 400px;
+        }
+        .ab {
+            /*绝对定位关键字，可以把一个元素放在页面的任何位置*/
+            position: absolute;
+            left: 40%;
+            bottom: 100px;
+        }
+        .white {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<!--这里是第一个盒子，装的是音乐-->
+        <div class="ab">
+<!--            audio是音频的意思，就是添加音乐。controls显示播放栏，loop循环-->
+            <audio src="../music/001.爱自己是终生浪漫的开始.mp3"
+                   id="dd" autoplay="autoplay" controls="controls" loop="loop"></audio><br>
+            <button onclick="st()">开始播放</button>
+            <button onclick="dt()">停止播放</button>
+            <button onclick="rs()">重置播放</button>
+            <script type="text/javascript">
+                function st(){
+                    var dd = document.getElementById("dd")
+                    dd.play()
+                }
+                function dt(){
+                    var dd = document.getElementById("dd")
+                    dd.pause()
+                }
+                function rs(){
+                    var dd = document.getElementById("dd")
+                    dd.load()
+                }
+            </script>
+        </div>
+<div>
+<!--    用form action定义跳转界面-->
+    <form action="2.柴敏涛的小世界的跳转页面.html" class="a">
+
+        <label for="username" class="white"> 用户名：</label>
+        <input type="text" placeholder="请输入用户名" maxlength="10" id="username"><br>
+        <label for="password" class="white"> &nbsp;&nbsp;&nbsp;&nbsp;密码：</label><input type="password" placeholder="请输入密码" id="password"><br>
+<!--        value里面的值就是登录框里的文字，后面的onclick就是定义点击之后要实现的功能-->
+
+
+        <input type="submit" style="margin-top: 10px" value="登录" onclick="return checkuser()">
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+    function getvalue(id){
+        return document.getElementById(id).value;
+    }
+    function checkuser(){
+        if(getvalue('username')=="123"&&getvalue('password')=="123"){
+            return ture;
+        }
+        else{
+            alert("用户名或密码错误！")
+            return false;
+        }
+    }
+
+</script>
+</html>

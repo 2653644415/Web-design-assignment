@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转页面</title>
+    <script language="JavaScript">
+
+        function ok(){
+// 跳转的目标网页
+           window.parent.parent.location.href=   "3.柴敏涛的小世界.html";
+    
+        }
+       // 倒数的间隔时间
+        window.setTimeout("ok();",3000);
+       
+        function countDown(secs){
+       
+              jump.innerText=secs;
+       
+              if(--secs>0)
+       
+                 setTimeout( "countDown(" +secs+ ")" ,1000);
+
+           }
+       
+           countDown(3);
+       
+       </script>
+       <style>
+        body{
+        
+            background-image: url(../img/0001.jpg);
+        
+            background-size: 100% ;
+        
+            background-repeat: no-repeat;
+            text-align: center;
+            margin-top: 400px;
+        }
+        </style>
+</head>
+
+<body>
+<!--rgb() 函数使用红(R)、绿(G)、蓝(B)三个颜色的叠加来生成各式各样的颜色。-->
+<!--RGB 即红色、绿色、蓝色（英语：Red, Green, Blue）。-->
+    <h1 style="color:rgb(219, 159, 246)">恭喜你 即将进入柴敏涛的小世界</h1>
+    <h3 style="color:bisque">(倒数三秒 请做好准备)</h3>
+</body>
+</html>

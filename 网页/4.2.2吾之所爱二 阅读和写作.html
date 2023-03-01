@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阅读和写作</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+        .shell{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .page{
+            transform: translateX(-200%);
+            position: absolute;
+            width: 800px;
+            height: 100%;
+            transition: .5s;
+            background-size: cover;
+        }
+        .button{
+            display: block;
+            width: 10%;
+            color: #fff;
+            font-size: 30px;
+            border-bottom: #fff solid 4px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            margin: 50px;
+            left: calc(50% + (var(--i)*17%));
+            z-index: 999;
+            transition: .3s;
+        }
+        .page_content{
+            box-sizing: border-box;
+            height: 100%;
+            padding: 50px;
+            color: #FFF;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+        @keyframes fade{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .white{
+            border-color: mintcream;
+        }
+        input{
+            display: none;
+        }
+        input:checked+.page{
+            transform: translateX(0px);
+            transition: .4s;
+        }
+        input:checked+.page .page_content{
+            width: 100%;
+            display: block;
+        }
+        .page:nth-child(3){
+            background-image: url('../img/123.jpg');
+            width: 850px;
+        }
+        .page:nth-child(3) .page_content{
+            background-color: darksalmon   ;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <label  style="--i:0"></label>
+        <input type="radio" id="button1" name="page" checked>
+        <div class="page" >
+            <div class="page_content" >
+                <h1>无穷的远方，无数的人们，都和我有关。</h1>
+                <h3>生活应该不只有眼前的代码，还有书和诗中的远方~</h3>
+                书籍推荐：
+                <table align="center" border="1"  cellspacing="0" width="800" height="570" class="white">
+                    <thead><!--表格第一行，行标题的标签-->
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>分类</th>
+                        <th>图片&链接</th>
+                        <th>读后感||推荐理由</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>
+                                《人类简史》
+                            </p>
+                        </td>
+                        <td>[以色列]尤瓦尔·赫拉利</td>
+                        <td>历史；人类通史</td>
+                        <td><a href="https://weread.qq.com/web/reader/d4a322a05d0f04d4a01f0d6" target="_blank">
+                            <img src="../img/003.jpg" width="130"></a>
+                        </td>
+                        <td>
+                            人类何德何能能在几万年间登上食物链的顶端，发展出文明？人和动物最本质的区别在哪？
+                             认知革命，农业革命和科技革命对我们根本性的作用是什么？
+                             虚构的故事在人类社会中占有多么重要的地位？ 我想这本书我们或许能得到一些答案。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>《三体》</td>
+                        <td>[中]刘慈欣</td>
+                        <td>科幻</td>
+                        <td><a href="https://weread.qq.com/web/reader/ce032b305a9bc1ce0b0dd2a" target="_blank">
+                            <img src="../img/002.jpg" width="130" title="点击可跳转前往阅读"></a></td>
+                        <td>
+                            我想刘慈欣的这本书里让人觉得印象最深刻的地方，不是其故事情节的精彩，
+                            也不是内含诸多硬核的物理学知识，
+                            而是其整体宏大的宇宙背景下的叙事观让人感觉到的人类的渺小感和无力感。
+                            想必大多数人看这本书的时候总会有和我一样的感受，人在死寂无垠的宇宙中的存在实在是太渺小了。
+                            当把一个人的一生放在几千年，光年的尺度下思考的时候。或许连一天中的一瞬都没有。
+                            故人活世间，有所为有所不为。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                《纳瓦尔宝典》
+                            </p>
+                        </td>
+                        <td>[美] 埃里克·乔根森</td>
+                        <td>人生；自我成长</td>
+                        <td><a href="https://weread.qq.com/web/reader/e1e32b00729fc94fe1e824d" target="_blank">
+                            <img src="../img/004.jpg" height="140"></a></td>
+                        <td>
+                            虽然一看书名就觉得有点离谱，跟葵花宝典似的，让人没有很大的看它的欲望。
+                            但不可否认的是，看过之后就会发现这本书和其他的聊致富，讲案例，讲操作的书不太一样。
+                            看完那些书之后直呼牛逼，然后合上书，该睡大觉的还是睡大觉。因为很多都是都是有时效性的，
+                            当时能用但是我们现在用不了。想有用，就必须抽象，但是一旦抽象就会像在讲大道理。
+                            你以为这本书是专门讲致富的名单他第二章讲的就是【幸福】，幸福是一种技能，它就像其它所有的宏大话题。
+                            其含义会睡着是空的转换而不断变化。诸如此类的问题都没有显而易见的正确答案，因为没有那个答案适用于所有人。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
